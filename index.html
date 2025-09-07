@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>REDMOON Founder's Login</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <main id="app">
+    <!-- Login -->
+    <section id="login-screen" class="card center">
+      <h1>REDMOON — Founders Login</h1>
+      <p>Sign in with an authorized Google account to record your session.</p>
+      <div id="signin-controls">
+        <button id="signin-btn" disabled>Loading...</button>
+        <p id="login-msg" class="muted"></p>
+      </div>
+      <small class="muted">Hosted on GitHub Pages — client-side only</small>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="card hidden">
+      <header class="row space-between">
+        <div><h2 id="welcome">Welcome —</h2><div id="email-display" class="muted"></div></div>
+        <div>
+          <button id="logout-btn" class="danger">Logout & Save Session</button>
+        </div>
+      </header>
+
+      <hr>
+
+      <div class="task-entry">
+        <input id="task-name" placeholder="Task name (required)" />
+        <textarea id="task-details" rows="3" placeholder="Task details (optional)"></textarea>
+        <div class="row">
+          <button id="start-btn">Start Work</button>
+          <button id="end-btn" class="muted" disabled>End Task</button>
+        </div>
+      </div>
+
+      <section id="active-task" class="hidden">
+        <h3>Active Task</h3>
+        <p><strong id="active-title"></strong></p>
+        <p id="active-details" class="muted"></p>
+        <p class="muted">Started: <span id="active-start"></span></p>
+      </section>
+
+      <section id="completed-section">
+        <h3>Completed Tasks</h3>
+        <ul id="completed-list"></ul>
+      </section>
+
+      <div id="status" class="muted"></div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
